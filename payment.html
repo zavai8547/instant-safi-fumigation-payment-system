@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Make a Payment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Make a Payment</h2>
+    <p class="company-info">
+      You are about to make a payment to <strong>Instant Safi Fumigation Company</strong>
+    </p>
+
+    <label for="amount">Enter Amount (KES)</label>
+    <input type="number" id="amount" min="1" placeholder="e.g. 60000">
+
+    <div class="payment-methods">
+      <button onclick="payWithVisa()">Pay with Visa</button>
+      <button onclick="payWithPayPal()">Pay with PayPal</button>
+      <button onclick="payWithMpesa()">Pay with M-Pesa</button>
+    </div>
+  </div>
+
+  <script>
+    function getAmount() {
+      const amount = document.getElementById("amount").value;
+      if (!amount || parseFloat(amount) <= 0) {
+        alert("Please enter a valid amount.");
+        return null;
+      }
+      return parseFloat(amount);
+    }
+
+    function payWithVisa() {
+      const amount = getAmount();
+      if (amount) {
+        alert(`Proceeding to Visa payment of KES ${amount} to Cynthia Zavai via Visa`);
+      }
+    }
+
+    function payWithPayPal() {
+      const amount = getAmount();
+      if (amount) {
+        alert(`Proceeding to PayPal payment of KES ${amount} to Cynthia Zavai Via PayPal`);
+      }
+    }
+
+    function payWithMpesa() {
+      const amount = getAmount();
+      if (amount) {
+        alert(`Initiating M-Pesa payment of KES ${amount} to Cynthis Zavai via M-Pesa`);
+      }
+    }
+  </script>
+</body>
+</html>
